@@ -20,11 +20,26 @@ class ProductCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        image.isUserInteractionEnabled = true
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(self.imageTaped))
+        image.addGestureRecognizer(tapImage)
     }
     
+    @objc func imageTaped() {
+        let rootController = self.window?.rootViewController
+        guard let detailVC = rootController?.storyboard?.instantiateViewController(identifier: "DetailViewController") else { fatalError("Error in detail") }
+        rootController?.navigationController?.pushViewController(detailVC, animated: true)
+        print("tt")
+//        let targetVC = DetailViewController()
+//        let navVC = UINavigationController(rootViewController: targetVC)
+//        self.window?.rootViewController?.present(navVC, animated: true)
     
-    @IBAction func cartPressed(_ sender: UIButton) {
     }
+    
+//
+//    @IBAction func cartPressed(_ sender: UIButton) {
+//    }
     
     func setupCell(product: Product) {
         productLabel.text = product.name

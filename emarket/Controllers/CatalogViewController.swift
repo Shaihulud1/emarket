@@ -9,6 +9,7 @@ import UIKit
 
 class CatalogViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var products = [Product]()
@@ -64,7 +65,35 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-  
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let newVC = storyboard?.instantiateViewController(identifier: "DetailViewController") as! DetailViewController 
+        let indexNum = indexPath[1]
+        newVC.product = self.products[indexNum]
+        navigationController?.pushViewController(newVC, animated: true)
+    }
+}
+
+//MARK - searchBar
+extension CatalogViewController: UISearchBarDelegate {
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//    //        let searchText = searchBar.text
+//    //        let request: NSFetchRequest<Item> = Item.fetchRequest()
+//    //        if (searchText != "") {
+//    //            request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText!)
+//    //            request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+//    //        }
+//    //        loadItems(request: request)
+//    }
+        
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+//        let request: NSFetchRequest<Item> = Item.fetchRequest()
+//        var predicate : NSPredicate? = nil
+//        if  searchText != "" {
+//            predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+//            request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+//        }
+//        loadItems(request: request, predicate: predicate)
+    }
 }
