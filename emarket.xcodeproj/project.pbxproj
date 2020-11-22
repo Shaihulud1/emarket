@@ -10,6 +10,9 @@
 		CF162751256A032600E66EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF162750256A032600E66EED /* GoogleService-Info.plist */; };
 		CF162768256A6D3500E66EED /* BasketRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF162767256A6D3500E66EED /* BasketRealm.swift */; };
 		CF16277D256A6FB800E66EED /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16277C256A6FB800E66EED /* Basket.swift */; };
+		CF162785256A81D700E66EED /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF162783256A81D700E66EED /* BasketCell.swift */; };
+		CF162786256A81D700E66EED /* BasketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF162784256A81D700E66EED /* BasketCell.xib */; };
+		CF162789256A824800E66EED /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF162788256A824800E66EED /* BasketViewController.swift */; };
 		CFC058D525689B8900C4E8C6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC058D425689B8900C4E8C6 /* DetailViewController.swift */; };
 		CFDA42D02566CE92008B122E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA42CF2566CE92008B122E /* AppDelegate.swift */; };
 		CFDA42D22566CE92008B122E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA42D12566CE92008B122E /* SceneDelegate.swift */; };
@@ -31,6 +34,9 @@
 		CF162750256A032600E66EED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF162767256A6D3500E66EED /* BasketRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRealm.swift; sourceTree = "<group>"; };
 		CF16277C256A6FB800E66EED /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		CF162783256A81D700E66EED /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
+		CF162784256A81D700E66EED /* BasketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketCell.xib; sourceTree = "<group>"; };
+		CF162788256A824800E66EED /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		CFC058D425689B8900C4E8C6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CFDA42CC2566CE92008B122E /* emarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDA42CF2566CE92008B122E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			children = (
 				CFDA42E42566D20C008B122E /* CatalogViewController.swift */,
 				CFC058D425689B8900C4E8C6 /* DetailViewController.swift */,
+				CF162788256A824800E66EED /* BasketViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,6 +140,8 @@
 			children = (
 				CFDA42ED2566D54B008B122E /* ProductCell.swift */,
 				CFDA42EE2566D54B008B122E /* ProductCell.xib */,
+				CF162783256A81D700E66EED /* BasketCell.swift */,
+				CF162784256A81D700E66EED /* BasketCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF162751256A032600E66EED /* GoogleService-Info.plist in Resources */,
+				CF162786256A81D700E66EED /* BasketCell.xib in Resources */,
 				CFDA42DC2566CE94008B122E /* LaunchScreen.storyboard in Resources */,
 				CFDA42F02566D54B008B122E /* ProductCell.xib in Resources */,
 				CFDA42D92566CE94008B122E /* Assets.xcassets in Resources */,
@@ -270,6 +280,8 @@
 				CFDA42E52566D20C008B122E /* CatalogViewController.swift in Sources */,
 				CFDA42F82566FB47008B122E /* Constants.swift in Sources */,
 				CF16277D256A6FB800E66EED /* Basket.swift in Sources */,
+				CF162789256A824800E66EED /* BasketViewController.swift in Sources */,
+				CF162785256A81D700E66EED /* BasketCell.swift in Sources */,
 				CFC058D525689B8900C4E8C6 /* DetailViewController.swift in Sources */,
 				CF162768256A6D3500E66EED /* BasketRealm.swift in Sources */,
 			);

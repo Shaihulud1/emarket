@@ -22,6 +22,10 @@ class Basket {
     func getBtnTitle(id: Int) -> String {
         return self.basketProducts.contains(id) ? "In Cart" : "Buy"
     }
+    
+    func getBasketIds() -> [Int] {
+        return self.basketProducts
+    }
 
     func add2Basket(id: Int) -> Bool {
         if !self.basketProducts.contains(id) {
