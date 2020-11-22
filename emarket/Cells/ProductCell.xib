@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -48,6 +49,9 @@
                                         <state key="normal" title="Buy">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buyPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="yxI-Yz-GJH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -76,6 +80,7 @@
             </constraints>
             <size key="customSize" width="777" height="300"/>
             <connections>
+                <outlet property="buyButton" destination="I39-zW-V5J" id="8aM-vL-KSN"/>
                 <outlet property="image" destination="5N7-a5-hAz" id="viR-gB-Yn3"/>
                 <outlet property="priceLabel" destination="zzz-eP-LKu" id="Au9-EP-j40"/>
                 <outlet property="productLabel" destination="pCs-AR-3bb" id="zvO-3h-yo0"/>

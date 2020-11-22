@@ -7,4 +7,5 @@ target 'emarket' do
 
   # Pods for emarket
   pod 'Firebase/Firestore'
+  pod 'RealmSwift'
 end

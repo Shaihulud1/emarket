@@ -15,6 +15,7 @@ class CatalogViewController: UIViewController {
     
     var products = [Product]()
     let db = Firestore.firestore()
+    let basket = Basket()
     
     
     override func viewDidLoad() {
@@ -59,9 +60,6 @@ class CatalogViewController: UIViewController {
 
 }
 
-
-
-
 //MARK - CollectionView
 
 extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -102,13 +100,5 @@ extension CatalogViewController: UISearchBarDelegate {
         loadCatalog(search: searchText)
     }
         
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchText != "" {
-//            let res = products.filter { $0.name.contains(searchText) }
-//            self.products = res
-//        } else {
-//            loadCatalog()
-//        }
-//
-//    }
+
 }

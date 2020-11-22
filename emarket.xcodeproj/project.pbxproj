@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CF162751256A032600E66EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF162750256A032600E66EED /* GoogleService-Info.plist */; };
+		CF162768256A6D3500E66EED /* BasketRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF162767256A6D3500E66EED /* BasketRealm.swift */; };
+		CF16277D256A6FB800E66EED /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF16277C256A6FB800E66EED /* Basket.swift */; };
 		CFC058D525689B8900C4E8C6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC058D425689B8900C4E8C6 /* DetailViewController.swift */; };
 		CFDA42D02566CE92008B122E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA42CF2566CE92008B122E /* AppDelegate.swift */; };
 		CFDA42D22566CE92008B122E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDA42D12566CE92008B122E /* SceneDelegate.swift */; };
@@ -27,6 +29,8 @@
 		869828F85133273D2F026DB8 /* Pods_emarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBCBCDDBECDCB27E7D75BF0 /* Pods-emarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emarket.release.xcconfig"; path = "Target Support Files/Pods-emarket/Pods-emarket.release.xcconfig"; sourceTree = "<group>"; };
 		CF162750256A032600E66EED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF162767256A6D3500E66EED /* BasketRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRealm.swift; sourceTree = "<group>"; };
+		CF16277C256A6FB800E66EED /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		CFC058D425689B8900C4E8C6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CFDA42CC2566CE92008B122E /* emarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDA42CF2566CE92008B122E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				CFDA42F32566D72E008B122E /* Product.swift */,
+				CF162767256A6D3500E66EED /* BasketRealm.swift */,
+				CF16277C256A6FB800E66EED /* Basket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 				CFDA42D22566CE92008B122E /* SceneDelegate.swift in Sources */,
 				CFDA42E52566D20C008B122E /* CatalogViewController.swift in Sources */,
 				CFDA42F82566FB47008B122E /* Constants.swift in Sources */,
+				CF16277D256A6FB800E66EED /* Basket.swift in Sources */,
 				CFC058D525689B8900C4E8C6 /* DetailViewController.swift in Sources */,
+				CF162768256A6D3500E66EED /* BasketRealm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
