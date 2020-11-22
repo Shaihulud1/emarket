@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CatalogViewController: UIViewController {
 
@@ -13,6 +14,7 @@ class CatalogViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var products = [Product]()
+    let db = Firestore.firestore()
     
     
     override func viewDidLoad() {
@@ -22,18 +24,36 @@ class CatalogViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
+        self.searchBar.delegate = self
+        
         loadCatalog()
     }
     
     
-    func loadCatalog()  {
-        self.products = [
-            Product(id: 1, image: "https://pics.vitaexpress.ru/public/images/large_w/176826.jpg", name:"Product 1 ", price: 5.34),
-            Product(id: 2, image: "https://pics.vitaexpress.ru/public/images/large_w/176826.jpg", name:"Product 2", price: 99.99),
-            Product(id: 3, image: "https://pics.vitaexpress.ru/public/images/large_w/176826.jpg", name:"Product 3", price: 15.50),
-        ]
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
+    func loadCatalog(search:String? = nil)  {
+        db.collection("products").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    if data["id"] != nil && data["name"] != nil && data["price"] != nil && data["image"] != nil {
+                        let id = data["id"] as! Int
+                        let name = data["name"] as! String
+                        let price = (data["price"] as? NSNumber)?.floatValue ?? 0
+                        let image = data["image"] as! String
+                        let prod = Product(id: id, image: image, name: name, price: price)
+                        self.products.append(prod)
+                        if (search != nil) {
+                            let res = self.products.filter { $0.name.contains(search!) }
+                            self.products = res
+                        }
+                        DispatchQueue.main.async {
+                            self.collectionView.reloadData()
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -75,25 +95,20 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 //MARK - searchBar
+
 extension CatalogViewController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//    //        let searchText = searchBar.text
-//    //        let request: NSFetchRequest<Item> = Item.fetchRequest()
-//    //        if (searchText != "") {
-//    //            request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText!)
-//    //            request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-//    //        }
-//    //        loadItems(request: request)
-//    }
-        
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-//        let request: NSFetchRequest<Item> = Item.fetchRequest()
-//        var predicate : NSPredicate? = nil
-//        if  searchText != "" {
-//            predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
-//            request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-//        }
-//        loadItems(request: request, predicate: predicate)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchText = searchBar.text == "" ? nil : searchBar.text
+        loadCatalog(search: searchText)
     }
+        
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchText != "" {
+//            let res = products.filter { $0.name.contains(searchText) }
+//            self.products = res
+//        } else {
+//            loadCatalog()
+//        }
+//
+//    }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>314074054311-kqrhvc5p8ru9rucs4m281flj9cvh7dbf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.314074054311-kqrhvc5p8ru9rucs4m281flj9cvh7dbf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAjVF6bbu96y_2c6UK1a3is9ZaQK4cnvvw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>314074054311</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dernovilia.emarket</string>
+	<key>PROJECT_ID</key>
+	<string>ios-market-d997a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ios-market-d997a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:314074054311:ios:d23c65ee837e07a9616582</string>
+	<key>DATABASE_URL</key>
+	<string>https://ios-market-d997a.firebaseio.com</string>
+</dict>
+</plist>
